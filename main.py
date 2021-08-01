@@ -6,7 +6,7 @@ cascade_eyes = cv2.CascadeClassifier('haarcascade_eye_tree_eyeglasses.xml')
 cap = cv2.VideoCapture(0)
 while cap.isOpened():
     ret, image = cap.read()
-    # image = cv2.imread('ramesh.jpg')
+# image = cv2.imread('elon.jpg')
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = cascade.detectMultiScale(gray, 1.1, 4)
 
@@ -18,7 +18,8 @@ while cap.isOpened():
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (255, 0, 0), 2)
 
-    cv2.imshow("image", image)
+        cv2.imshow("image", image)
+
     if cv2.waitKey(1) == ord("s"):
         break
 
